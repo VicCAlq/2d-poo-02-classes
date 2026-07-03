@@ -1,0 +1,22 @@
+{
+  "name": "2x-poo-01-objetos",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "lint": "eslint .",
+    "preview": "vite preview",
+    "test": "vitest run .",
+    "test-json": "timeout --signal=SIGKILL 60s npx vitest run --reporter=json --output-file=./resultado.json --pool=forks --testTimeout=60000 || true"
+  },
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "@vitest/spy": "^4.1.8",
+    "eslint": "^10.3.0",
+    "globals": "^17.6.0",
+    "vite": "^8.0.12",
+    "vitest": "^4.1.6"
+  }
+}
