@@ -15,3 +15,33 @@
  * Lembre-se de exportar a classe "Jogo" no final do arquivo usando
  * "export default Jogo"
  */
+class Jogo {
+    constructor (
+        nomeDoJogo, tipo, qtdJogadores, dificuldade, fases, fasesConcluidas, zerado
+    ) {
+        if (typeof(nomeDoJogo) !== "string" 
+        || typeof(tipo) !== "string"
+        || typeof(qtdJogadores) !== "number"
+        || typeof(dificuldade) !== "number"
+        || dificuldade < 1 || dificuldade > 5
+        || typeof(fases) !== "number"
+        || typeof(fasesConcluidas) !== "number"
+        || typeof(zerado) !== "boolean")
+        {
+            throw new Error("Tipo errado boy")
+        }
+        this.nomeDoJogo = nomeDoJogo
+        this.tipo = tipo
+        this.qtdJogadores = qtdJogadores
+        this.dificuldade = dificuldade
+        this.fases = fases
+        this.fasesConcluidas = fasesConcluidas ?? 0
+        this.zerado = zerado ?? false
+    }
+}
+
+const meuJogo = new Jogo(
+    "Escola", "Terror", 45, 5, 3, 2, false
+)
+
+export default Jogo
