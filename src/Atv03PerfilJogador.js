@@ -12,3 +12,15 @@
  * Lembre-se de exportar a classe "PerfilJogador" no final do arquivo usando
  * "export default PerfilJogador"
  */
+
+
+class PerfilJogador {
+  constructor() {
+    this.jogador = "Steve";
+    this.email = "steve@minecraft.com";
+    this.jogos = [new Jogo()];
+    this.amigos = [];
+  }
+}
+
+export default PerfilJogador;
