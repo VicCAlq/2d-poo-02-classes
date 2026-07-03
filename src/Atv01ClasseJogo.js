@@ -29,8 +29,8 @@ zerando,
         this.nomeDoJogo = "UnsainT";
         this.tipo = "SoulsLike";
         this.qtdJogadores = 1;
-        this.dificuldade = 4;
-        this.fases = 12;
+        this.dificuldade = 5;
+        this.fases = 100;
         this.fasesConcluidas = 0;
         this.zerando = false;
     }
