@@ -13,3 +13,23 @@
  * Lembre-se de exportar a classe "PerfilJogador" no final do arquivo usando
  * "export default PerfilJogador"
  */
+
+
+import Jogo, { jogo1, jogo2 } from "./Atv02ClasseJogoCompleto";
+
+class PerfilJogador {
+    constructor (jogador, email, jogos, amigos) {
+this.jogador = jogador;
+this.email = email;
+this.jogos = jogos
+this.amigos = amigos
+    }
+}
+
+const jogador1 = new PerfilJogador ("Jailson", "jailsonbipa2@gmail.com", [jogo1] , [] )
+const jogador2 = new PerfilJogador ("Matheus", "Matheusdedireita22@gmail.com", [jogo2] , [] )
+
+jogador1.amigos.push(jogador2)
+jogador2.amigos.push(jogador1)
+
+export default PerfilJogador;
