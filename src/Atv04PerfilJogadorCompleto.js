@@ -13,3 +13,30 @@
  * Lembre-se de exportar a classe "PerfilJogador" no final do arquivo usando
  * "export default PerfilJogador"
  */
+
+import Jogo from "./Atv02ClasseJogoCompleto"
+
+class PerfilJogador {
+    constructor (jogador, email) {
+        this.jogador = jogador
+        this.email = email
+        
+        this.jogos = []
+        this.amigos = []
+    } 
+
+    tempoJogado() {
+        let tempoFinal = 0
+        for (let jogo of this.jogos) {
+            tempoFinal += jogo.fasesConcluidas / (1 / jogo.dificuldade) * 10
+        } return tempoFinal
+    } 
+    zerados() {
+        let qtdDeZerados = 0
+        for (let jogo of this.jogos) {
+            if (jogo.zerado == true) {
+                qtdDeZerados++
+            }
+        } return qtdDeZerados
+    }
+} export default PerfilJogador

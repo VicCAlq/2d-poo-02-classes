@@ -15,3 +15,17 @@
  * Lembre-se de exportar a classe "Jogo" no final do arquivo usando
  * "export default Jogo"
  */
+ class Jogo {
+    constructor(nomeDoJogo, tipo, qtdDeJogadores, dificuldade, fases,) {
+        this.nomeDoJogo = nomeDoJogo
+        this.tipo = tipo
+        this.qtdDeJogadores = qtdDeJogadores 
+        this.dificuldade = dificuldade
+        this.fases = fases
+
+        this.fasesConcluidas = 0
+        this.zerado = false
+    }
+ }
+
+ export default Jogo

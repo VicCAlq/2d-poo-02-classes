@@ -12,3 +12,13 @@
  * Lembre-se de exportar a classe "PerfilJogador" no final do arquivo usando
  * "export default PerfilJogador"
  */
+
+class PerfilJogador {
+    constructor (jogador, email) {
+        this.jogador = jogador
+        this.email = email
+        
+        this.jogos = []
+        this.amigos = []
+    }
+} export default PerfilJogador
