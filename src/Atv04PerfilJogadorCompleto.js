@@ -24,6 +24,30 @@ this.email = email;
 this.jogos = jogos
 this.amigos = amigos
     }
+
+tempoJogado () {
+    let minuto = 0
+for (const jogados of this.jogos) {
+minuto += jogados.fasesConcluidas * 10 * jogados.dificuldade 
+} 
+
+ return minuto;
+
+}
+
+zerados () {
+    let quanti = 0
+    for (const jogo of this.jogos) {
+    if (jogo.zerado === true) {
+quanti ++
+    }
+    }   
+
+    return quanti;
+}
+
+
+
 }
 
 const jogador1 = new PerfilJogador ("Jailson", "jailsonbipa2@gmail.com", [jogo1] , [] )
@@ -31,5 +55,7 @@ const jogador2 = new PerfilJogador ("Matheus", "Matheusdedireita22@gmail.com", [
 
 jogador1.amigos.push(jogador2)
 jogador2.amigos.push(jogador1)
+
+
 
 export default PerfilJogador;
