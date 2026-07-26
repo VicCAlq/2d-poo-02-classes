@@ -13,3 +13,34 @@
  * Lembre-se de exportar a classe "PerfilJogador" no final do arquivo usando
  * "export default PerfilJogador"
  */
+class PerfilJogador {
+  constructor(jogador, email) {
+    if (typeof jogador !== "string" || typeof email !== "string") {
+      console.log("Os dados informados não estão no formato correto.");
+      return;
+    }
+    this.jogador = jogador;
+    this.email = email;
+    this.jogos = [];
+    this.amigos = [];
+  }
+  tempoJogado() {
+    let totalMinutos = 0;
+    for (let jogo of this.jogos) {
+      if (typeof jogo.fasesConcluidas === "number" && typeof jogo.dificuldade === "number") {
+        totalMinutos += jogo.fasesConcluidas * 10 * jogo.dificuldade;
+      }
+    }
+    return Math.round(totalMinutos);
+  }
+  zerados() {
+    let quantidadeZerados = 0;
+    for (let jogo of this.jogos) {
+      if (typeof jogo.zerado === "boolean" && jogo.zerado === true) {
+        quantidadeZerados++;
+      }
+    }
+    return quantidadeZerados;
+  }
+}
+export default PerfilJogador;
