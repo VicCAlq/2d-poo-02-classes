@@ -16,8 +16,8 @@
  * "export default Jogo"
  */
 
-classe Jogo: {
-constructor(nomeDoJogo,tipo, qtdJogadores, dificuldade, fases)
+class Jogo {
+constructor(nomeDoJogo,tipo, qtdJogadores, dificuldade, fases){
 
 this.nomeDoJogo= nomeDoJogo 
 this.tipo= tipo
@@ -26,7 +26,7 @@ this.dificuldade= dificuldade
 this.fases= fases
 this.fasesConcluidas= 0
 this.zerado= false
-
+}
 }
 
 export default Jogo;
