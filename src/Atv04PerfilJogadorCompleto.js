@@ -22,14 +22,14 @@ class PerfilJogador {
     {
         this.jogador = jogador
         this.email = email
-        this.jogos = []
-        this.amigos = []
+        this.jogos = jogos ?? []
+        this.amigos = amigos ?? []
     }
 
     tempoJogado() {
         let tempo = 0
         for (const jogo of this.jogos) {
-            tempo += jogo.tempoJogado
+            tempo += 10 * jogo.dificuldade * jogo.fasesConcluidas
         }
 
         return tempo

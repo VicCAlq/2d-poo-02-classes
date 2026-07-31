@@ -27,8 +27,8 @@ class Jogo {
     }
 
     jogar (minutos) {
-        const blocos = Math.floor(minutos / 10)
-        this.fasesConcluidas += blocos * (1 / this.dificuldade)
+        const blocos = minutos / 10
+        this.fasesConcluidas += Math.floor(blocos * (1 / this.dificuldade))
 
         if (this.fasesConcluidas >= this.fases) {
             this.zerado = true

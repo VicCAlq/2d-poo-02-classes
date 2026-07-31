@@ -15,14 +15,14 @@
 
 class PerfilJogador {
     constructor (
-        jogador, email
+        jogador, email, jogos, amigos
     )
 
     {
         this.jogador = jogador
         this.email = email
-        this.jogos = []
-        this.amigos = []
+        this.jogos = jogos ?? []
+        this.amigos = amigos ?? []
     }
 }
 
