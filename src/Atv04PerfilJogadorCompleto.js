@@ -13,3 +13,39 @@
  * Lembre-se de exportar a classe "PerfilJogador" no final do arquivo usando
  * "export default PerfilJogador"
  */
+
+class PerfilJogador {
+    constructor (
+        jogador, email
+    )
+
+    {
+        this.jogador = jogador
+        this.email = email
+        this.jogos = []
+        this.amigos = []
+    }
+
+    tempoJogado() {
+        let tempo = 0
+        for (const jogo of this.jogos) {
+            tempo += jogo.tempoJogado
+        }
+
+        return tempo
+    }
+
+    zerados() {
+
+        let quantidade = 0
+        for (const jogo of this.jogos) {
+            if (jogo.zerado) {
+                quantidade++
+            }
+        }
+
+         return quantidade
+    }
+}
+
+export default PerfilJogador
