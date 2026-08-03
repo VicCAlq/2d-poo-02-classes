@@ -13,35 +13,47 @@
  * Lembre-se de exportar a classe "PerfilJogador" no final do arquivo usando
  * "export default PerfilJogador"
  */
-class PerfilJogador {
-  constructor(jogador, email) {
-    this.jogador = jogador;
-    this.email = email;
-    this.jogos = [];
-    this.amigos = [];
-  }
+import { useState } from 'react';
 
-  tempoJogado() {
-    let total = 0;
+export default function Atv04TratarErrosDeMuitos() {
+  const [comentarios, setComentarios] = useState([]);
 
-    for (let jogo of this.jogos) {
-      total += jogo.fasesConcluidas * jogo.dificuldade * 10;
-    }
+  const carregarAtividade = () => {
+    fetch('https://jsonplaceholder.typicode.com/comments')
+      .then((resposta) => {
+        
+        if (!resposta.ok) {
+          throw new Error('Erro ao buscar os comentários: ' + resposta.status);
+        }
+        return resposta.json();
+      })
+      .then((dados) => {
+        
+        setComentarios(dados);
+      })
+      .catch((erro) => {
+        
+        console.error('Ocorreu um erro:', erro);
+      });
+  };
 
-    return total;
-  }
+  return (
+    <div>
+      <button onClick={carregarAtividade}>
+        Clique abaixo para carregar uma atividade
+      </button>
 
-  zerados() {
-    let quantidade = 0;
-
-    for (let jogo of this.jogos) {
-      if (jogo.zerado) {
-        quantidade++;
-      }
-    }
-
-    return quantidade;
-  }
+      <div>
+        {comentarios.map((item) => (
+          <div key={item.id}>
+            <p>
+              {item.postId}: {item.id} - {item.email}
+            </p>
+            <p>{item.name}</p>
+            <p>{item.body}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
 }
-
-export default PerfilJogador;

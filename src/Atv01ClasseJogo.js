@@ -15,33 +15,29 @@
  * Lembre-se de exportar a classe "Jogo" no final do arquivo usando
  * "export default Jogo"
  */
-class Jogo {
-    constructor (
-        nomeDoJogo, tipo, qtdJogadores, dificuldade, fases, fasesConcluidas, zerado
-    ) {
-        if (typeof(nomeDoJogo) !== "string" 
-        || typeof(tipo) !== "string"
-        || typeof(qtdJogadores) !== "number"
-        || typeof(dificuldade) !== "number"
-        || dificuldade < 1 || dificuldade > 5
-        || typeof(fases) !== "number"
-        || typeof(fasesConcluidas) !== "number"
-        || typeof(zerado) !== "boolean")
-        {
-            throw new Error("Tipo errado boy")
-        }
-        this.nomeDoJogo = nomeDoJogo
-        this.tipo = tipo
-        this.qtdJogadores = qtdJogadores
-        this.dificuldade = dificuldade
-        this.fases = fases
-        this.fasesConcluidas = fasesConcluidas ?? 0
-        this.zerado = zerado ?? false
-    }
+import { useState } from 'react';
+
+export default function Atv01UmItem() {
+  const [item, setItem] = useState(null);
+
+  const carregarAtividade = () => {
+    fetch('https://jsonplaceholder.typicode.com/todos/1')
+      .then((resposta) => resposta.json())
+      .then((dados) => setItem(dados))
+      .catch((erro) => console.error('Erro ao carregar a atividade:', erro));
+  };
+
+  return (
+    <div>
+      <button onClick={carregarAtividade}>
+        Clique abaixo para carregar uma atividade
+      </button>
+
+      {item && (
+        <p>
+          {item.id} - {item.title}: {item.completed ? 'feito' : 'a fazer'}
+        </p>
+      )}
+    </div>
+  );
 }
-
-const meuJogo = new Jogo(
-    "Escola", "Terror", 45, 5, 3, 2, false
-)
-
-export default Jogo

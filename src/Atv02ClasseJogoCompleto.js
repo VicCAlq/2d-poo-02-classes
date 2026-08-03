@@ -10,24 +10,31 @@
  * Lembre-se de exportar a classe "Jogo" no final do arquivo usando
  * "export default Jogo"
  */
-class Jogo {
-  constructor(fases, dificuldade) {
-    this.fases = fases;
-    this.dificuldade = dificuldade;
-    this.fasesConcluidas = 0;
-    this.zerado = false;
-  }
+ import { useState } from 'react';
 
-  jogar(minutos) {
-    const blocosDe10 = Math.floor(minutos / 10);
+export default function Atv02MuitosItens() {
+  const [lista, setLista] = useState([]);
 
-    this.fasesConcluidas += blocosDe10 * (1 / this.dificuldade);
+  const carregarAtividades = () => {
+    fetch('https://jsonplaceholder.typicode.com/todos')
+      .then((resposta) => resposta.json())
+      .then((dados) => setLista(dados))
+      .catch((erro) => console.error('Erro ao carregar as atividades:', erro));
+  };
 
-    if (this.fasesConcluidas >= this.fases) {
-      this.fasesConcluidas = this.fases;
-      this.zerado = true;
-    }
-  }
+  return (
+    <div>
+      <button onClick={carregarAtividades}>
+        Clique abaixo para carregar várias atividades
+      </button>
+
+      <div>
+        {lista.map((item) => (
+          <p key={item.id}>
+            {item.id} - {item.title}: {item.completed ? 'feito' : 'a fazer'}
+          </p>
+        ))}
+      </div>
+    </div>
+  );
 }
-
-export default Jogo;
