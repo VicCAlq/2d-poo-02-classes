@@ -10,3 +10,34 @@
  * Lembre-se de exportar a classe "Jogo" no final do arquivo usando
  * "export default Jogo"
  */
+class Jogo {
+  constructor(nomeDoJogo, tipo, qtdJogadores, difficulty, fases) {
+    this.nomeDoJogo = String(nomeDoJogo);
+    this.tipo = String(tipo);
+    this.qtdJogadores = parseInt(qtdJogadores);
+    this.dificuldade = Number(difficulty);
+    this.fases = parseInt(fases);
+    
+    this.fasesConcluidas = 0;
+    this.zerado = false;
+  }
+
+  jogar(minutos) {
+
+    const blocosDeDezMinutos = Math.floor(parseInt(minutos) / 10);
+    
+    
+    const progressoGanho = blocosDeDezMinutos * (1 / this.dificuldade);
+    
+  
+    this.fasesConcluidas += progressoGanho;
+
+ 
+    if (this.fasesConcluidas >= this.fases) {
+      this.fasesConcluidas = this.fases; 
+      this.zerado = true;
+    }
+  }
+}
+
+export default Jogo;
