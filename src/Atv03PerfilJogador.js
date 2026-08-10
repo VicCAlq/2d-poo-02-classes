@@ -18,8 +18,8 @@ class PerfilJogador {
   ) {
     if (typeof(jogador) !== "string" 
         || typeof(email) !== "string"
-        || typeof(jogos) !== "string"
-        || typeof(amigos) !== "string"
+        || typeof(jogos) !== Array.isArray(jogos)
+        || typeof(amigos) !== Array.isArray(amigos)
         ){
             throw new Error("Tipo errado boy")
         }
@@ -28,21 +28,19 @@ class PerfilJogador {
             this.jogos = jogos
             this.amigos = amigos
             }
-    jogar(minutos){
-        while (minutos >= 0){
-            minutos =- 10
-            this.fasesConcluidas += 1/this.dificuldade
-        }
-        this.fasesConcluidas += (minutos/10)/this.dificuldade
-        if (this.fasesConcluidas == this.fases) {
-            this.zerado = true
-        }
-    }
 }
 
 const perfilJogador = new PerfilJogador(
-    "Rurthraa", "Arthurmachadocorreia0w0@gmail.com", 
+    "Rurthraa", "Arthurmachadocorreia0w0@gmail.com", [], []
 )
+const jogadorAmigo = new PerfilJogador(
+    "Rurthraa", "Arthurmachadocorreia0w0@gmail.com", [] 
+)
+perfilJogador.amigos.push(jogadorAmigo)
+
+
+const j1 = new Jogo()
+perfilJogador.jogos.push(j1)
 
 console.log(PerfilJogador.jogar())
 export default PerfilJogador
