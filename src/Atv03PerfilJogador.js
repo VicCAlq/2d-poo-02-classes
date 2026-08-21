@@ -12,3 +12,35 @@
  * Lembre-se de exportar a classe "PerfilJogador" no final do arquivo usando
  * "export default PerfilJogador"
  */
+class PerfilJogador {
+  constructor(
+    jogador, email, jogos, amigos
+  ) {
+    if (typeof(jogador) !== "string" 
+        || typeof(email) !== "string"
+        || typeof(jogos) !== Array.isArray(jogos)
+        || typeof(amigos) !== Array.isArray(amigos)
+        ){
+            throw new Error("Tipo errado boy")
+        }
+            this.jogador = jogador
+            this.email = email
+            this.jogos = jogos
+            this.amigos = amigos
+            }
+}
+
+const perfilJogador = new PerfilJogador(
+    "Rurthraa", "Arthurmachadocorreia0w0@gmail.com", [], []
+)
+const jogadorAmigo = new PerfilJogador(
+    "Rurthraa", "Arthurmachadocorreia0w0@gmail.com", [] 
+)
+perfilJogador.amigos.push(jogadorAmigo)
+
+
+const j1 = new Jogo()
+perfilJogador.jogos.push(j1)
+
+console.log(PerfilJogador.jogar())
+export default PerfilJogador
