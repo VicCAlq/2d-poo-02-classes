@@ -17,15 +17,26 @@
  */
 
 class Jogo {
-    constructor(nomeDoJogo, tipo, qtdJogadores, dificuldade, fases) {
-        this.nomeDoJogo = house of the sound;
-        this.tipo = mobalie;
-        this.qtdJogadores = (solo);
-        this.dificuldade = 5
-        this.fases = parseInt (6);
-        this.fasesConcluidas = 3/6;
-        this.zerado = false;
+    constructor(
+        nomeDoJogo,
+        tipo,
+        qtdJogadores, 
+        dificuldade = [1,2,3,4,5],
+        fases,
+        fasesConcluidas = 0, // valor padrão caso não seja passado
+        zerando = false,     // valor padrão caso não seja passado
+
+    ) {
+        this.nomeDoJogo = nomeDoJogo;
+        this.tipo = tipo;
+        this.qtdJogadores = qtdJogadores;
+        this.dificuldade = dificuldade;
+        this.fases = fases;
+        this.fasesConcluidas = fasesConcluidas;
+        this.zerando = zerando;
+
     }
+
 }
 
 export default Jogo;

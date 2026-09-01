@@ -16,13 +16,17 @@
 
 // perfilJogador.js
 
-class PerfilJogador {
-  constructor(jogador, email) {
-    this.jogador = jogador; "rose"
-    this.email = email;  "rose@brasil"
-    this.jogos = []; "sams,fnnaf,poppy time play, skiycraft,boblox"
-    this.amigos = []; "nameless207,dandysfan345,herobrine416"
-  }
+class PerfilJogador{
+    constructor(
+        jogador,
+        email,
+        jogos,
+        amigos,
+    ){
+        this.jogador = jogador;
+        this.email = email;
+        this.jogos = jogos;
+        this.amigos = amigos;
+    }
 }
-
-export default PerfilJogador;
+export default PerfilJogador
