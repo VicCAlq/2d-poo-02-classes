@@ -19,10 +19,10 @@ class PerfilJogador{
         jogos,
         amigos,
     ){
-        this.jogador = "theSakura";
-        this.email = "theSakuraBoy1606@gmail.com";
-        this.jogos = null;
-        this.amigos = null;
+        this.jogador = jogador;
+        this.email = email;
+        this.jogos = jogos;
+        this.amigos = amigos;
     }
 }
 export default PerfilJogador
