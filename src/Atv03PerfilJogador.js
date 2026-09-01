@@ -38,7 +38,7 @@ class PerfilJogador
 const perfilJogador = new PerfilJogador(
     "kaykay", "kaylanemarinho17@gmail.com", [], []
 )
-const jogadorAmigo = new PerfilJogador(
+const jogadorLegal = new PerfilJogador(
     "Kaykay", "kaylanemarinho17@gmail.com", [] 
 )
 perfilJogador.amigos.push(jogadorLegal)
