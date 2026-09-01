@@ -18,10 +18,10 @@
 
 class PerfilJogador {
   constructor(jogador, email) {
-    this.jogador = jogador;
-    this.email = email;
-    this.jogos = [];
-    this.amigos = [];
+    this.jogador = jogador; "rose"
+    this.email = email;  "rose@brasil"
+    this.jogos = []; "sams,fnnaf,poppy time play, skiycraft,boblox"
+    this.amigos = []; "nameless207,dandysfan345,herobrine416"
   }
 }
 

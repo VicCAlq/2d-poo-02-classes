@@ -11,28 +11,15 @@
  * "export default Jogo"
  */
 class Jogo {
-    constructor(nomeDoJogo, tipo, qtdJogadores, difficulty, fases) {
-        this.nomeDoJogo = nomeDoJogo;
-        this.tipo = tipo;
-        this.qtdJogadores = parseInt(qtdJogadores);
-        this.dificuldade = Math.min(Math.max(parseInt(difficulty), 1), 5); // Garante que fique entre 1 e 5
-        this.fases = parseInt(fases);
-        this.fasesConcluidas = 0;
-        this.zerado = false;
+    constructor(nomeDoJogo, tipo, qtdJogadores, difficuldade, fases, fasesConcluidas,zerado.) {
+        this.nomeDoJogo = "sams";
+        this.tipo = "mobalie";
+        this.qtdJogadores = "parseInt"(solo);
+        this.dificuldade = hard;
+        this.fases = (6);
+        this.fasesConcluidas = 3/6;
+        this.zerado = nao;
     }
 
-    jogar(minutos) {
-        // Calcula quantas repetições de 10 minutos foram jogadas
-        const blocosDeDez = Math.floor(minutos / 10);
-        
-        // Cada bloco de 10 minutos aumenta o progresso em (1 / dificuldade)
-        this.fasesConcluidas += blocosDeDez * (1 / this.dificuldade);
-
-        // Se atingir ou passar o total de fases, o jogo é zerado
-        if (this.fasesConcluidas >= this.fases) {
-            this.zerado = true;
-        }
-    }
 }
-
 export default Jogo;

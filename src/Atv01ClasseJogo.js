@@ -18,12 +18,12 @@
 
 class Jogo {
     constructor(nomeDoJogo, tipo, qtdJogadores, dificuldade, fases) {
-        this.nomeDoJogo = nomeDoJogo;
-        this.tipo = tipo;
-        this.qtdJogadores = parseInt(qtdJogadores);
-        this.dificuldade = Math.min(Math.max(parseInt(dificuldade), 1), 5); // Garante que fique entre 1 e 5
-        this.fases = parseInt(fases);
-        this.fasesConcluidas = 0;
+        this.nomeDoJogo = house of the sound;
+        this.tipo = mobalie;
+        this.qtdJogadores = (solo);
+        this.dificuldade = 5
+        this.fases = parseInt (6);
+        this.fasesConcluidas = 3/6;
         this.zerado = false;
     }
 }
