@@ -13,3 +13,17 @@
  * Lembre-se de exportar a classe "PerfilJogador" no final do arquivo usando
  * "export default PerfilJogador"
  */
+
+  tempoJogado() {
+    return this.jogos.reduce((total, jogo) => {
+   
+      return total + (jogo.tempoFasesConcluidas || 0);
+    }, 0);
+  }
+
+  zerados() {
+    return this.jogos.filter(jogo => jogo.zerado === true).length;
+  }
+}
+
+export default PerfilJogador;
